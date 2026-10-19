@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>3-2-1 Prank Camera</title>
+<title> Shunchaki videoga qarang</title>
 <style>
   body {
     margin: 0;
@@ -45,25 +45,25 @@
 <body>
 <main>
   <h1>?? 3... 2... 1...</h1>
-  <p>Kamera prank sahifasi</p>
+  <p>Qara</p>
   <p>
     Kamera orqali video yozilishi mumkin.
     Yozuv faqat sen bosganingda boshlanadi.
     Video hech kimga avtomatik yuborilmaydi.
   </p>
 
-  <button id="camera">Kamerani yoqish</button>
+  <button id="camera">Bos</button>
   <video id="preview" autoplay muted playsinline></video>
 
   <label>
     <input type="checkbox" id="consent">
-    Video yozilishiga roziman.
+     Roziman.
   </label>
 
-  <button id="record" disabled>3𣇻 va yozishni boshlash</button>
-  <button id="stop" disabled>Yozishni to憍tatish</button>
-  <p id="status">Kamera hali yoqilmagan.</p>
-  <a id="save" hidden>Videoni yuklab olish</a>
+  <button id="record" disabled>3鈥�2鈥�1 </button>
+  <button id="stop" disabled>To`xtat</button>
+  <p id="status">Boshlash</p>
+  <a id="save" hidden></a>
 </main>
 
 <script>
@@ -87,7 +87,7 @@ camera.onclick = async () => {
       audio: false
     });
     preview.srcObject = stream;
-    status.textContent = "Kamera yoqildi. Yozishni o憐ing boshlaysan.";
+    status.textContent = "Boshlandi  endi ko`ring. ";
     camera.disabled = true;
     record.disabled = !consent.checked;
   } catch (error) {
@@ -144,15 +144,15 @@ function beginRecording() {
       save.download = "my-prank-video.webm";
       save.textContent = "Videoni yuklab olish";
       save.hidden = false;
-      status.textContent = "Video tayyor. Uni o憐ing saqlashing mumkin.";
+      status.textContent = "Video tayyor. Uni o鈥榸ing saqlashing mumkin.";
       record.disabled = !(consent.checked && stream);
     };
 
     recorder.start();
     stop.disabled = false;
-    status.textContent = "?? Video yozilmoqda.";
+    status.textContent = "?? Davom etmoqda.";
   } catch (error) {
-    status.textContent = "Bu brauzer video yozishni qo憀lamasligi mumkin.";
+    status.textContent = "Bu brauzer ko`rishni qo鈥榣lamasligi mumkin.";
     record.disabled = false;
   }
 }
