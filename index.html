@@ -46,11 +46,7 @@
 <main>
   <h1>?? 3... 2... 1...</h1>
   <p>Qara</p>
-  <p>
-    Kamera orqali video yozilishi mumkin.
-    Yozuv faqat sen bosganingda boshlanadi.
-    Video hech kimga avtomatik yuborilmaydi.
-  </p>
+
 
   <button id="camera">Bos</button>
   <video id="preview" autoplay muted playsinline></video>
@@ -92,7 +88,7 @@ camera.onclick = async () => {
     record.disabled = !consent.checked;
   } catch (error) {
     status.textContent =
-      "Kamera ochilmadi. Ruxsat va HTTPS ulanishini tekshir.";
+     "xatolik";
   }
 };
 
@@ -107,11 +103,11 @@ record.onclick = async () => {
   record.disabled = true;
   let count = 3;
 
-  status.textContent = "Yozuv " + count + "...";
+  status.textContent = "Videoni ko`ring " + count + "...";
   countdownTimer = setInterval(() => {
     count--;
     if (count > 0) {
-      status.textContent = "Yozuv " + count + "...";
+      status.textContent = "videoni ko`ring " + count + "...";
     } else {
       clearInterval(countdownTimer);
       countdownTimer = null;
@@ -144,7 +140,7 @@ function beginRecording() {
       save.download = "my-prank-video.webm";
       save.textContent = "Videoni yuklab olish";
       save.hidden = false;
-      status.textContent = "Video tayyor. Uni o‘zing saqlashing mumkin.";
+    
       record.disabled = !(consent.checked && stream);
     };
 
